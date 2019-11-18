@@ -1,0 +1,27 @@
+pkgname=sddm-theme-matcha
+pkgver=r8.a045453
+pkgrel=1
+pkgdesc="Matcha theme for SDDM"
+arch=('any')
+url="https://github.com/librewish/sddm-theme-matcha"
+license=('GPLv3')
+makedepends=('git')
+depends=('sddm' 'qt5-quickcontrols' 'qt5-quickcontrols2' 'qt5-graphicaleffects' 'qt5-svg' 'qt5-virtualkeyboard')
+source=("git+https://github.com/librewish/sddm-theme-matcha.git")
+sha256sums=('SKIP')
+
+pkgver() {
+	cd "$srcdir/sddm-theme-matcha"
+
+# Git, no tags available
+	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+
+}
+
+package() {
+    cd ${pkgname}
+
+    install -d ${pkgdir}/usr/share/sddm/themes/matcha
+    cp -r src/matcha/* ${pkgdir}/usr/share/sddm/themes/matcha
+}
+ 
