@@ -53,7 +53,7 @@ package_wayfire-default-settings() {
         'wf-recorder-git'
 	'wf-osk-git'
         'gtk-layer-shell'
-        'wcm'
+        'wcm-git'
         'qt5-wayland'
         'egl-wayland'
         'swaylock'
@@ -89,6 +89,8 @@ package_wayfire-default-settings() {
 	'python-evdev'
 	'sddm-theme-matcha'
 	'wish-wallpapers'
+	'ydotool-git'
+	ananicy-git'
         )
     optdepends=(
 	'systemd-guest-user'
