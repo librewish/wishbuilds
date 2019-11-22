@@ -19,6 +19,8 @@ post_upgrade() {
   systemctl is-active grub-btrfs.path >/dev/null || systemctl enable grub-btrfs.path
   systemctl is-active fstrim.timer >/dev/null || systemctl enable fstrim.timer
   systemctl is-active nohang >/dev/null || systemctl enable nohang
+  systemctl is-active ydotoold >/dev/null || systemctl enable ydotoold
+  systemctl is-active ananicy >/dev/null || systemctl enable ananicy
   echo ""
   msg "services enabled."
   echo ""
@@ -37,6 +39,8 @@ post_install() {
   systemctl is-active grub-btrfs.path >/dev/null || systemctl enable grub-btrfs.path
   systemctl is-active fstrim.timer >/dev/null || systemctl enable fstrim.timer
   systemctl is-active nohang >/dev/null || systemctl enable nohang
+  systemctl is-active ydotoold >/dev/null || systemctl enable ydotoold
+  systemctl is-active ananicy >/dev/null || systemctl enable ananicy
   echo ""
   msg "services should now be enabled."
   msg "Reboot your system, so changes will take effect.."

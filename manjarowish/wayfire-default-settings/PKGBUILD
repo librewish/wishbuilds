@@ -90,7 +90,7 @@ package_wayfire-default-settings() {
 	'sddm-theme-matcha'
 	'wish-wallpapers'
 	'ydotool-git'
-	ananicy-git'
+	'ananicy-git'
         )
     optdepends=(
 	'systemd-guest-user'
