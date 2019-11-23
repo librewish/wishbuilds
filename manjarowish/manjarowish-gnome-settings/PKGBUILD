@@ -59,6 +59,7 @@ package_manjarowish-gnome-settings() {
         'irqbalance'
         'systemd-swap'
         'nohang-git'
+	'ananicy-git'
 	'perl-file-mimeinfo'
 	'xdg-user-dirs-gtk'
 	'xdg-utils'
