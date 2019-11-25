@@ -6,7 +6,7 @@ _gitname=manjarowish-gnome-settings
 pkgname=(
     'manjarowish-gnome-settings'
     )
-pkgver=r37.f76b45d
+pkgver=r10.85a997c
 pkgrel=1
 arch=('any')
 _branch='master'
