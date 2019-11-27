@@ -26,7 +26,7 @@ pkgname='grub-wish'
 pkgdesc='GNU GRand Unified Bootloader (2)'
 _pkgver=2.04
 pkgver=${_pkgver/-/}
-pkgrel=3
+pkgrel=4
 url='https://www.gnu.org/software/grub/'
 arch=('i686' 'x86_64')
 license=('GPL3')
@@ -78,9 +78,9 @@ sha256sums=('SKIP'
             'SKIP'
             '04d652be1e28a6d464965c75c71ac84633085cd0960c2687466651c34c94bd89'
             'SKIP'
-            '50108fd7a73885bb17f72483cb59a049350b19cad6c8bdbf2a7d0e85c6b6b500'
+            '01264c247283b7bbdef65d7646541c022440ddaf54f8eaf5aeb3a02eb98b4dd8'
             'f422e9735c99baa88f2f4a7953d2583ef97f2c01a594c65df677f4bcc67ac9ae'
-            '1488d7f3924bd7385a222e3e9685cdb1ecb39f3d6f882da6b5907b898f5b8f08'
+            'b5a9b80fee3856db53716d278b0ba27942fb0993515fd6bbc1629b7fee2d65d7'
             '467b0101154076fee99d9574a5fb6b772a3923cc200a1f4ca08fe17be8d68111'
             'cf00c96aee37e0a73c1ab6ed6ccfe74fa2b2859f55cd315a4caa6c880ce7aeba'
             'a5198267ceb04dceb6d2ea7800281a42b3f91fd02da55d2cc9ea20d47273ca29'
