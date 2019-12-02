@@ -1,0 +1,27 @@
+pkgname=mw-wallpapers
+pkgver=r2.7b850fd
+pkgrel=1
+pkgdesc="wallpaper collection"
+arch=('any')
+url="https://github.com/librewish/mw-wallpapers"
+license=('GPLv3')
+makedepends=('git')
+depends=()
+source=("git+https://github.com/librewish/mw-wallpapers.git")
+sha256sums=('SKIP')
+
+pkgver() {
+	cd "$srcdir/mw-wallpapers"
+
+# Git, no tags available
+	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+
+}
+
+package() {
+    cd ${pkgname}
+
+    install -d ${pkgdir}/usr/share/wallpapers/mw-wallpapers
+    cp -r src/mw-wallpapers/* ${pkgdir}/usr/share/wallpapers/mw-wallpapers
+}
+ 
