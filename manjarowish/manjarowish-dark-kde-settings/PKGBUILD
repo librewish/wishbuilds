@@ -7,7 +7,7 @@ pkgname=(
     'manjarowish-dark-kde-settings'
     )
 pkgver=0.1
-pkgrel=12
+pkgrel=1
 arch=('any')
 _branch='master'
 url="https://github.com/librewish/manjarowish-dark"
@@ -34,6 +34,14 @@ _install() {
 
 }
 
+pkgver() {
+	cd "$srcdir/manjarowish-dark-kde-settings"
+
+# Git, no tags available
+	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+
+}
+
 package_manjarowish-dark-kde-settings() {
     pkgdesc='Manjarowish Linux kde dark settings'
     depends=(
@@ -49,6 +57,7 @@ package_manjarowish-dark-kde-settings() {
         'irqbalance'
         'systemd-swap'
         'nohang-git'
+	'ananicy-git'
         'plasma5-applets-window-title'
         'plasma5-applets-window-appmenu'
         'plasma5-applets-window-buttons'
