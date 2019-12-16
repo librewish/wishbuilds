@@ -31,7 +31,6 @@ add_group() {
     getent group "video" &>/dev/null || groupadd -r video
     getent group "plugdev" &>/dev/null || groupadd -r plugdev
     add_users
-    chgrp sambashare var/lib/samba/usershare
 }
 
 post_upgrade() {

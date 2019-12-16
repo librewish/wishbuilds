@@ -6,7 +6,7 @@ _gitname=manjarowish-gnome-settings
 pkgname=(
     'manjarowish-gnome-settings'
     )
-pkgver=r10.85a997c
+pkgver=r22.a5e55f7
 pkgrel=1
 arch=('any')
 _branch='master'
@@ -65,6 +65,7 @@ package_manjarowish-gnome-settings() {
 	'xdg-utils'
 	'xdg-su'
 	'wish-wallpapers'
+	'mw-wallpapers'
         )
     optdepends=(
 	'systemd-guest-user'
