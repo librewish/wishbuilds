@@ -35,7 +35,7 @@ _install() {
 }
 
 pkgver() {
-	cd "$srcdir/manjarowish-dark-kde-settings"
+	cd "$srcdir/manjarowish-dark"
 
 # Git, no tags available
 	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
