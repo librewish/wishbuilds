@@ -7,7 +7,7 @@ pkgname=(
     'manjarowish-lxqt-kwin-dark-settings'
     )
 pkgver=0.1
-pkgrel=5
+pkgrel=1
 arch=('any')
 _branch='master'
 url="https://github.com/librewish/manjarowish-lxqt-kwin-dark-settings"
@@ -34,33 +34,18 @@ _install() {
 
 }
 
+pkgver() {
+	cd "$srcdir/manjarowish-lxqt-kwin-dark-settings"
+
+# Git, no tags available
+	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+
+}
+
 package_manjarowish-lxqt-kwin-dark-settings() {
     pkgdesc='Manjarowish Linux Lxqt-Kwin dark settings'
     depends=(
         'kvantum-qt5'
-        'plank'
-        'lxqt-about'
-        'lxqt-admin'
-        'lxqt-config'
-        'lxqt-globalkeys'
-        'lxqt-notificationd'
-        'lxqt-openssh-askpass'
-        'lxqt-panel'
-        'lxqt-policykit'
-        'lxqt-powermanagement'
-        'lxqt-qtplugin'
-        'lxqt-runner'
-        'lxqt-session'
-        'lxqt-sudo'
-        'lxqt-themes'
-        'pcmanfm-qt'
-        'lximage-qt'
-        'qterminal'
-        'pavucontrol-qt'
-        'lxqt-archiver'
-        'qps'
-        'qlipper'
-        'bluedevil'
         'mojave-gtk-theme-git'
         'papirus-icon-theme'
         'noto-fonts'
@@ -69,8 +54,9 @@ package_manjarowish-lxqt-kwin-dark-settings() {
         'irqbalance'
         'systemd-swap'
         'nohang-git'
+	'ananicy-git'
+	'cpupower'
         'sddm-kcm'
-        'sddm-theme-sugar-candy-git'
         'kwin'
         'kde-cli-tools'
         'kwin-decoration-sierra-breeze-enhanced-git'
@@ -80,6 +66,7 @@ package_manjarowish-lxqt-kwin-dark-settings() {
     optdepends=(
         'timeshift-autosnap'
         'grub-btrfs'
+	'systemd-guest-user'
         )    
     install=manjarowish-lxqt-kwin-dark-settings.install
     conflicts=('manjarowish-light-settings-settings','manjaro-kde-settings','manjarowish-dark-settings-settings')

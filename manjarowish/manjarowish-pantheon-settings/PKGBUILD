@@ -7,7 +7,7 @@ pkgname=(
     'manjarowish-pantheon-settings'
     )
 pkgver=0.1
-pkgrel=10
+pkgrel=1
 arch=('any')
 _branch='master'
 url="https://github.com/librewish/manjarowish-pantheon-settings"
@@ -34,15 +34,25 @@ _install() {
 
 }
 
+pkgver() {
+	cd "$srcdir/manjarowish-pantheon-settings"
+
+# Git, no tags available
+	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+
+}
+
 package_manjarowish-pantheon-settings() {
     pkgdesc='Manjarowish Linux pantheon settings'
     depends=(
         'kvantum-qt5'
+	'cpupower'
         'preload'
         'haveged'
         'irqbalance'
         'systemd-swap'
         'nohang-git'
+	'ananicy-git'
         'qt5ct'
         'elementary-icon-theme'
         'gtk-theme-elementary'
@@ -51,7 +61,7 @@ package_manjarowish-pantheon-settings() {
         'granite'
         'plank'
         'switchboard'
-        'wingpanel-standalone-git'
+        'wingpanel'
         'ibus'
         'orca'
         'onboard'
@@ -62,6 +72,7 @@ package_manjarowish-pantheon-settings() {
     optdepends=(
         'timeshift-autosnap'
         'grub-btrfs'
+	'systemd-guest-user'
         'compiz'
         )    
     install=manjarowish-pantheon-settings.install
