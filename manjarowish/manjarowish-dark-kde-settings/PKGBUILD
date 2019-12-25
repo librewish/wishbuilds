@@ -59,8 +59,6 @@ package_manjarowish-dark-kde-settings() {
         'systemd-swap'
         'nohang-git'
 	'ananicy-git'
-	'kde-services'
-	'samba-mounter-git'
         'plasma5-applets-window-title'
         'plasma5-applets-window-appmenu'
         'plasma5-applets-window-buttons'
