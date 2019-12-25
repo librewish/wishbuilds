@@ -50,7 +50,6 @@ package_manjarowish-dark-kde-settings() {
         'flameshot'
         'kim4'
         'mojave-gtk-theme-git'
-        'papirus-icon-theme'
         'noto-fonts'
 	'cpupower'
         'preload'
