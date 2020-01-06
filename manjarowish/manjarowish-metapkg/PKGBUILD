@@ -1,0 +1,127 @@
+# Maintainer: Librewish <librewish@gmail.com>
+
+pkgbase=manjarowish-meta
+arch=('i686' 'x86_64')
+pkgname=('manjarowish-alsa'
+	 'manjarowish-pulse'
+         'manjarowish-gstreamer''
+         'manjarowish-vaapi'
+         'manjarowish-network'
+         'manjarowish-modem'
+         'manjarowish-bluetooth'
+)
+
+pkgver=2020.01
+pkgrel=1
+url="www.manjarowish.org"
+license=('GPL')
+
+package_manjarowish-alsa() {
+	pkgdesc="manjarowish ALSA support (Meta-PKG)"
+	if [ "$CARCH" = "i686" ]; then
+		depends=("alsa-utils"
+			"alsa-firmware"
+			"alsa-lib")
+	elif [ "$CARCH" = "x86_64" ]; then
+		depends=("alsa-utils"
+			"alsa-firmware"
+			"alsa-lib"
+			"lib32-alsa-lib"
+			"lib32-alsa-plugins")
+	fi
+	optdepends=('xfce4-mixer: The volume control plugin for the Xfce panel'
+			'pnmixer: GTK volume mixer applet that runs in the system tray'
+			'pnmixer-xfce4: GTK volume mixer applet that runs in the system tray')
+}
+
+package_manjarowish-pulse() {
+	pkgdesc="manjarowish Pulseaudio support (Meta-PKG)"
+	if [ "$CARCH" = "i686" ]; then
+		depends=("pulseaudio" 
+			"pulseaudio-alsa")
+	elif [ "$CARCH" = "x86_64" ]; then
+		depends=("pulseaudio"
+			"pulseaudio-alsa"
+                        "pulseaudio-ctl"
+                        "pulseaudio-jack"
+                        "pulseaudio-zeroconf"
+                        "pulseaudio-lirc"
+                        "fluidsynth"
+                        "openal"
+                        "libcanberra-gstreamer"
+                        "lib32-openal"
+                        "lib32-fluidsynth"
+                        "lib32-libcanberra-gstreamer"
+			"lib32-libcanberra-pulse"
+			"lib32-libpulse")
+	fi
+	optdepends=('pavucontrol: A GTK volume control tool for PulseAudio'
+                        'pulseaudio-equalizer-ladspa: A gui equalizer for pulseaudio'
+			'pnmixer: GTK volume mixer applet that runs in the system tray'
+			'pnmixer-xfce4: GTK volume mixer applet that runs in the system tray')
+}
+
+package_manjarowish-gstreamer() {
+	pkgdesc="manjarowish gstreamer support (Meta-PKG)"
+		depends=("ffmpeg"
+                        "gst-libav"
+                        "gst-plugins-bad"
+                        "gst-plugins-base"
+                        "gst-plugins-good"
+                        "gst-plugins-ugly"
+                        "gst-plugins-espeak"
+}
+
+package_manjarowish-vaapi() {
+	pkgdesc="manjarowish VA-API support (Meta-PKG)"
+		depends=("libva-intel-driver"
+                        "libva-mesa-driver"
+                        "libva-vdpau-driver"
+                        "lib32-libva-intel-driver"
+                        "lib32-libva-mesa-driver"
+                        "lib32-libva-vdpau-driver"
+}
+
+package_manjarowish-network() {
+	pkgdesc="manjarowish network support (Meta-PKG)"
+		depends=("networkmanager"
+                        "networkmanager-openconnect"
+                        "networkmanager-openvpn"
+                        "networkmanager-pptp"
+                        "networkmanager-vpnc"
+                        "networkmanager-strongswan"
+                        "network-manager-sstp"
+                        "networkmanager-fortisslvpn"
+                        "rp-pppoe"
+                        "openresolv"
+                        "openssh"
+                        "avahi"
+                        "nss-mdns"
+                        "dnsmasq"
+                        "wpa_supplicant"
+
+}
+
+package_manjarowish-modem() {
+	pkgdesc="manjarowish modem support (Meta-PKG)"
+		depends=("modemmanager"
+                        "mobile-broadband-provider-info"
+                        "usb_modeswitch"
+	optdepends=('modem-manager-gui: A gui for modem manager')
+}
+
+package_manjarowish-bluetooth() {
+	pkgdesc="manjarowish bluetooth support (Meta-PKG)"
+		depends=("bluez"
+                        "bluez-libs"
+                        "bluez-cups"
+                        "bluez-hid2hci"
+                        "bluez-plugins"
+                        "bluez-tools "
+                        "bluez-utils"
+                        "hidapi"
+                        "pulseaudio-bluetooth"
+	optdepends=('blueman: A gtk+ bluetooth manager'
+                        'blueberry: a gtk gui for bluetooth')
+}
+
