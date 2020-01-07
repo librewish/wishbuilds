@@ -9,6 +9,7 @@ pkgname=('manjarowish-alsa'
          'manjarowish-network'
          'manjarowish-modem'
          'manjarowish-bluetooth'
+         'manjarowish-printer'
 )
 
 pkgver=2020.01
@@ -92,6 +93,8 @@ package_manjarowish-network() {
                         "networkmanager-strongswan"
                         "network-manager-sstp"
                         "networkmanager-fortisslvpn"
+                        "networkmanager-dispatcher-sshd"
+                        "networkmanager-dispatcher-ntpd"
                         "rp-pppoe"
                         "openresolv"
                         "openssh"
@@ -120,5 +123,27 @@ package_manjarowish-bluetooth() {
                         "bluez-tools "
                         "bluez-utils"
                         "pulseaudio-bluetooth")
-	optdepends=('blueman: A gtk+ bluetooth manager')
+	optdepends=('blueman: A gtk+ bluetooth manager'
+                        'bluedevil: qt bluetooth frontend'
+                        'blueberry: bluetooth configuration tool')
+}
+
+package_manjarowish-printer() {
+	pkgdesc="manjarowish printer support (Meta-PKG)"
+		depends=("cups"
+                        "cups-pdf"
+                        "cups-pk-helper"
+                        "ghostscript"
+                        "gsfonts"
+                        "gutenprint"
+                        "hplip"
+                        "python-gobject"
+                        "python-pyqt5"
+                        "python-pysmbc"
+                        "splix"
+                        "system-config-printer"
+                        "colord-sane")
+	optdepends=('xsane: gtk2 frontend for scanner'
+                        'simple-scan: gtk3 frontend for scanner'
+                        'skanlite: Image Scanning Application for KDE')
 }
