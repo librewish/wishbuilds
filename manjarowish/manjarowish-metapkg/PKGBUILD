@@ -4,7 +4,7 @@ pkgbase=manjarowish-meta
 arch=('i686' 'x86_64')
 pkgname=('manjarowish-alsa'
 	 'manjarowish-pulse'
-         'manjarowish-gstreamer''
+         'manjarowish-gstreamer'
          'manjarowish-vaapi'
          'manjarowish-network'
          'manjarowish-modem'
@@ -121,7 +121,7 @@ package_manjarowish-bluetooth() {
                         "bluez-cups"
                         "bluez-hid2hci"
                         "bluez-plugins"
-                        "bluez-tools "
+                        "bluez-tools"
                         "bluez-utils"
                         "pulseaudio-bluetooth")
 	optdepends=('blueman: A gtk+ bluetooth manager'
