@@ -102,7 +102,8 @@ package_manjarowish-network() {
                         "nss-mdns"
                         "dnsmasq"
                         "wpa_supplicant")
-	optdepends=('network-manager-applet: Applet for managing network connection')
+	optdepends=('network-manager-applet: Applet for managing network connection'
+                        'firewalld: Firewall daemon with D-Bus interface')
 }
 
 package_manjarowish-modem() {
@@ -143,7 +144,8 @@ package_manjarowish-printer() {
                         "splix"
                         "system-config-printer"
                         "colord-sane")
-	optdepends=('xsane: gtk2 frontend for scanner'
+	optdepends=('print-manager: A kde tool for managing print jobs and printers'
+                        'xsane: gtk2 frontend for scanner'
                         'simple-scan: gtk3 frontend for scanner'
                         'skanlite: Image Scanning Application for KDE')
 }
