@@ -57,8 +57,8 @@ package_manjarowish-pulse() {
 	fi
 	optdepends=('pavucontrol: A GTK volume control tool for PulseAudio'
                         'pulseaudio-equalizer-ladspa: A gui equalizer for pulseaudio'
-			'pnmixer: GTK volume mixer applet that runs in the system tray'
-			'pnmixer-xfce4: GTK volume mixer applet that runs in the system tray')
+                        'pasystray: pulseaudio system tray'
+                        'paprefs: configuration dialog for pulseaudio')
 }
 
 package_manjarowish-gstreamer() {
@@ -69,7 +69,7 @@ package_manjarowish-gstreamer() {
                         "gst-plugins-base"
                         "gst-plugins-good"
                         "gst-plugins-ugly"
-                        "gst-plugins-espeak"
+                        "gst-plugins-espeak")
 }
 
 package_manjarowish-vaapi() {
@@ -79,7 +79,7 @@ package_manjarowish-vaapi() {
                         "libva-vdpau-driver"
                         "lib32-libva-intel-driver"
                         "lib32-libva-mesa-driver"
-                        "lib32-libva-vdpau-driver"
+                        "lib32-libva-vdpau-driver")
 }
 
 package_manjarowish-network() {
@@ -98,15 +98,15 @@ package_manjarowish-network() {
                         "avahi"
                         "nss-mdns"
                         "dnsmasq"
-                        "wpa_supplicant"
-
+                        "wpa_supplicant")
+	optdepends=('network-manager-applet: Applet for managing network connection')
 }
 
 package_manjarowish-modem() {
 	pkgdesc="manjarowish modem support (Meta-PKG)"
 		depends=("modemmanager"
                         "mobile-broadband-provider-info"
-                        "usb_modeswitch"
+                        "usb_modeswitch")
 	optdepends=('modem-manager-gui: A gui for modem manager')
 }
 
@@ -119,9 +119,6 @@ package_manjarowish-bluetooth() {
                         "bluez-plugins"
                         "bluez-tools "
                         "bluez-utils"
-                        "hidapi"
-                        "pulseaudio-bluetooth"
-	optdepends=('blueman: A gtk+ bluetooth manager'
-                        'blueberry: a gtk gui for bluetooth')
+                        "pulseaudio-bluetooth")
+	optdepends=('blueman: A gtk+ bluetooth manager')
 }
-
