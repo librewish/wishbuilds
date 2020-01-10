@@ -46,7 +46,6 @@ package_wayfire-default-settings() {
     pkgdesc='wayfire default settings'
     depends=(
         'wayfire-git'
-        'wayfire-plugins-extra-git'
         'wf-shell-git'
 	'wlroots-git'
 	'wf-config-git'
