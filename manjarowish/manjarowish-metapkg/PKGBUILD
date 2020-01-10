@@ -10,29 +10,39 @@ pkgname=('manjarowish-alsa'
          'manjarowish-modem'
          'manjarowish-bluetooth'
          'manjarowish-printer'
+         'manjarowish-input'
 )
 
-pkgver=2020.01
+pkgver=20200110
 pkgrel=1
 url="www.manjarowish.org"
 license=('GPL')
+
+pkgver() {
+
+    date +%Y%m%d
+}
 
 package_manjarowish-alsa() {
 	pkgdesc="manjarowish ALSA support (Meta-PKG)"
 	if [ "$CARCH" = "i686" ]; then
 		depends=("alsa-utils"
 			"alsa-firmware"
-			"alsa-lib")
+			"alsa-lib"
+                        "alsa-plugins"
+                        "alsa-tools"
+                        "alsa-oss")
 	elif [ "$CARCH" = "x86_64" ]; then
 		depends=("alsa-utils"
 			"alsa-firmware"
 			"alsa-lib"
+                        "alsa-plugins"
+                        "alsa-tools"
+                        "alsa-oss"
 			"lib32-alsa-lib"
+                        "lib32-alsa-oss"
 			"lib32-alsa-plugins")
 	fi
-	optdepends=('xfce4-mixer: The volume control plugin for the Xfce panel'
-			'pnmixer: GTK volume mixer applet that runs in the system tray'
-			'pnmixer-xfce4: GTK volume mixer applet that runs in the system tray')
 }
 
 package_manjarowish-pulse() {
@@ -43,13 +53,14 @@ package_manjarowish-pulse() {
 	elif [ "$CARCH" = "x86_64" ]; then
 		depends=("pulseaudio"
 			"pulseaudio-alsa"
-                        "pulseaudio-ctl"
+                        "pulseaudio-equalizer"
                         "pulseaudio-jack"
                         "pulseaudio-zeroconf"
                         "pulseaudio-lirc"
                         "fluidsynth"
                         "openal"
                         "libcanberra-gstreamer"
+                        "libcanberra-pulse"
                         "lib32-openal"
                         "lib32-fluidsynth"
                         "lib32-libcanberra-gstreamer"
@@ -59,7 +70,8 @@ package_manjarowish-pulse() {
 	optdepends=('pavucontrol: A GTK volume control tool for PulseAudio'
                         'pulseaudio-equalizer-ladspa: A gui equalizer for pulseaudio'
                         'pasystray: pulseaudio system tray'
-                        'paprefs: configuration dialog for pulseaudio')
+                        'paprefs: configuration dialog for pulseaudio'
+                        'pulseaudio-ctl: Control PulseAudio volume from the shell or mapped to keyboard shortcuts')
 }
 
 package_manjarowish-gstreamer() {
@@ -78,6 +90,7 @@ package_manjarowish-vaapi() {
 		depends=("libva-intel-driver"
                         "libva-mesa-driver"
                         "libva-vdpau-driver"
+                        "intel-media-driver"
                         "lib32-libva-intel-driver"
                         "lib32-libva-mesa-driver"
                         "lib32-libva-vdpau-driver")
@@ -101,7 +114,8 @@ package_manjarowish-network() {
                         "avahi"
                         "nss-mdns"
                         "dnsmasq"
-                        "wpa_supplicant")
+                        "wpa_supplicant"
+                        "samba")
 	optdepends=('network-manager-applet: Applet for managing network connection'
                         'firewalld: Firewall daemon with D-Bus interface')
 }
@@ -111,7 +125,8 @@ package_manjarowish-modem() {
 		depends=("modemmanager"
                         "mobile-broadband-provider-info"
                         "usb_modeswitch")
-	optdepends=('modem-manager-gui: A gui for modem manager')
+	optdepends=('modem-manager-gui: A gui for modem manager'
+                        'gpsd: GPS daemon and library to support USB/serial GPS devices')
 }
 
 package_manjarowish-bluetooth() {
@@ -138,9 +153,12 @@ package_manjarowish-printer() {
                         "gsfonts"
                         "gutenprint"
                         "hplip"
+                        "foomatic-db"
+                        "foomatic-db-gutenprint-ppds"
                         "python-gobject"
                         "python-pyqt5"
                         "python-pysmbc"
+                        "python-reportlab"
                         "splix"
                         "system-config-printer"
                         "colord-sane")
@@ -148,4 +166,23 @@ package_manjarowish-printer() {
                         'xsane: gtk2 frontend for scanner'
                         'simple-scan: gtk3 frontend for scanner'
                         'skanlite: Image Scanning Application for KDE')
+}
+
+ package_manjarowish-input() {
+	pkgdesc="manjarowish input support (Meta-PKG)"
+		depends=("xf86-input-elographics"
+                        "xf86-input-evdev"
+                        "xf86-input-void"
+                        "xf86-input-libinput"
+                        "xf86-input-wacom"
+                        "libinput-gestures"
+                        "iio-sensor-proxy"
+                        "fprintd"
+                        "bolt")
+	optdepends=('gestures: a minimal gtk+ gui for libinput-gesture'
+                        'easystroke: control your desktop using mouse gesture'
+                        'piper: GTK application to configure gaming mice'
+                        'fancontrol-gui: Gui for fancontrol'
+                        'fingerprint-gui: Application for fingerprint-based authentication, automatically support UPEK fingerprint readers with non-free library'
+                        'fcitx: for fcitx input method support')
 }
