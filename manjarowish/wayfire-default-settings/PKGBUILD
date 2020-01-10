@@ -85,6 +85,7 @@ package_wayfire-default-settings() {
 	'sddm-theme-matcha'
 	'wish-wallpapers'
 	'ydotool-git'
+	'wlogout-git'
         )
     optdepends=(
 	'systemd-guest-user'
