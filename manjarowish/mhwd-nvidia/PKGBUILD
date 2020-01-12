@@ -1,43 +1,54 @@
-# Maintainer: Philip Müller <philm[at]manjaro[dog]org>
-# Maintainer: Bernhard Landauer <bernhard@manjaro.org>
-# Contributor: Sven-Hendrik Haase <sh@lutzhaase.com>
-# Contributor: Thomas Baechler <thomas@archlinux.org>
-# Contributor: James Rayner <iphitus@gmail.com>
-# Contributor: Aaron Plattner <aplattner@nvidia.com>
+# Maintainer: Librewish <librewish@gmail.com>
 
-_nver=440xx
-pkgbase=nvidia-utils
-pkgname=("mhwd-nvidia")
-pkgver=440.44
-pkgrel=3
-arch=('x86_64')
-url="http://www.nvidia.com/"
-license=('custom')
-options=('!strip')
-source=('mhwd-nvidia')
-source_x86_64=("http://download.nvidia.com/XFree86/Linux-x86_64/$pkgver/NVIDIA-Linux-x86_64-$pkgver-no-compat32.run")
-sha256sums=('11176f1c070bbdbfaa01a3743ec065fe71ff867b9f72f1dce0de0339b5873bb5')
-sha256sums_x86_64=('794fdfc8e65c203ae482f59df7e55050ddcf0a11af2a95eaa1a10c7d48ec7e0f')
 
-_pkg="NVIDIA-Linux-x86_64-$pkgver-no-compat32"
+pkgbase=mhwd-nvidia
+_gitname=mhwd-nvidia
+pkgname=(
+    'mhwd-nvidia'
+    )
+pkgver=r37.f76b45d
+pkgrel=1
+arch=('any')
+_branch='master'
+url="https://github.com/librewish/mhwd-nvidia"
+license=('GPL')
+makedepends=('git')
+source=("git+$url.git#branch=${_branch}")
+sha256sums=('SKIP')
 
-prepare() {
-    sh "$_pkg.run" --extract-only
-    cd "$_pkg"
-    bsdtar -xf nvidia-persistenced-init.tar.bz2
+_install() {
+    if [[ -d $srcdir/$_gitname/$1/etc ]]; then
+        install -d $pkgdir/etc
+        cp -rf $srcdir/$_gitname/$1/etc $pkgdir
+    fi
+
+    if [[ -d $srcdir/$_gitname/$1/usr ]]; then
+        install -d $pkgdir/etc
+        cp -rf $srcdir/$_gitname/$1/usr $pkgdir
+    fi
+    
+    if [[ -d $srcdir/$_gitname/$1/skel ]]; then
+        install -d $pkgdir/etc
+        cp -rf $srcdir/$_gitname/$1/skel $pkgdir/etc
+    fi
+
+    if [[ -d $srcdir/$_gitname/$1/var ]]; then
+        install -d $pkgdir/etc
+        cp -rf $srcdir/$_gitname/$1/var $pkgdir
+    fi
+}
+
+pkgver() {
+	cd "$srcdir/mhwd-nvidia"
+
+# Git, no tags available
+	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+
 }
 
 package_mhwd-nvidia() {
-    pkgdesc="MHWD module-ids for nvidia $pkgver"
-    arch=('any')
+    pkgdesc='mhwd-nvidia pci id'
+    provides=('mhwd-nvidia-418xx' 'mhwd-nvidia-430xx' 'mhwd-nvidia-435xx' 'mhwd-nvidia-440xx' 'mhwd-nvidia-340xx' 'mhwd-nvidia-390xx')
 
-    install -d -m755 "$pkgdir/var/lib/mhwd/ids/pci/"
-
-    # Generate mhwd database
-    sh -e $srcdir/mhwd-nvidia \
-    $srcdir/$_pkg/README.txt \
-    $srcdir/$_pkg/kernel/nvidia/nv-kernel.o_binary \
-    > $pkgdir/var/lib/mhwd/ids/pci/nvidia-$_nver.ids
-    # add PCIID: 1b82 Nvidia Gforce 1070 Ti
-    sed -i 's/1b81 1b84/1b81 1b82 1b84/g' $pkgdir/var/lib/mhwd/ids/pci/nvidia-$_nver.ids
+    _install ''
 }
