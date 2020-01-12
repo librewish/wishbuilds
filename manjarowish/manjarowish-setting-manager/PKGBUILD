@@ -11,7 +11,7 @@ arch=('i686' 'x86_64')
 url="https://github.com/librewish/manjarowish-settings-manager"
 license=("GPL")
 depends=('icu' 'qt5-base>=5.12.3' 'hwinfo' 'kitemmodels' 'kauth' 
-         'kcoreaddons' 'ckbcomp' 'xdg-utils')
+         'kcoreaddons' 'ckbcomp' 'xdg-utils' 'mhwd-wish')
 optdepends=('manjaro-settings-manager-notifier: qt-based'
             'manjaro-settings-manager-knotifier: knotifications-based')
 makedepends=('git' 'extra-cmake-modules' 'kdoctools' 'qt5-tools' 'knotifications' 
