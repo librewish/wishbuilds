@@ -19,11 +19,6 @@ pkgrel=1
 url="www.manjarowish.org"
 license=('GPL')
 
-\\ pkgver() {
-
-\\    date +%Y%m%d
-\\ }
-
 
 package_manjarowish-alsa() {
 	pkgdesc="manjarowish ALSA support (Meta-PKG)"
