@@ -49,6 +49,6 @@ pkgver() {
 package_mhwd-nvidia() {
     pkgdesc='mhwd-nvidia pci id'
     provides=('mhwd-nvidia-418xx' 'mhwd-nvidia-430xx' 'mhwd-nvidia-435xx' 'mhwd-nvidia-440xx' 'mhwd-nvidia-340xx' 'mhwd-nvidia-390xx')
-
+    conflicts=('mhwd-nvidia-418xx' 'mhwd-nvidia-430xx' 'mhwd-nvidia-435xx' 'mhwd-nvidia-440xx' 'mhwd-nvidia-340xx' 'mhwd-nvidia-390xx')
     _install ''
 }

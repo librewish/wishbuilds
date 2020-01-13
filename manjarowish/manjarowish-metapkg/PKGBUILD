@@ -7,21 +7,23 @@ pkgname=('manjarowish-alsa'
          'manjarowish-gstreamer'
          'manjarowish-vaapi'
          'manjarowish-network'
+         'manjarowish-connman'
          'manjarowish-modem'
          'manjarowish-bluetooth'
          'manjarowish-printer'
          'manjarowish-input'
 )
 
-pkgver=20200110
+pkgver=20200114
 pkgrel=1
 url="www.manjarowish.org"
 license=('GPL')
 
-pkgver() {
+\\ pkgver() {
 
-    date +%Y%m%d
-}
+\\    date +%Y%m%d
+\\ }
+
 
 package_manjarowish-alsa() {
 	pkgdesc="manjarowish ALSA support (Meta-PKG)"
@@ -30,19 +32,18 @@ package_manjarowish-alsa() {
 			"alsa-firmware"
 			"alsa-lib"
                         "alsa-plugins"
-                        "alsa-tools"
                         "alsa-oss")
 	elif [ "$CARCH" = "x86_64" ]; then
 		depends=("alsa-utils"
 			"alsa-firmware"
 			"alsa-lib"
                         "alsa-plugins"
-                        "alsa-tools"
                         "alsa-oss"
 			"lib32-alsa-lib"
                         "lib32-alsa-oss"
 			"lib32-alsa-plugins")
 	fi
+	optdepends=('alsa-tools')
 }
 
 package_manjarowish-pulse() {
@@ -117,7 +118,32 @@ package_manjarowish-network() {
                         "wpa_supplicant"
                         "samba")
 	optdepends=('network-manager-applet: Applet for managing network connection'
+                        'nm-tray: A pure QT NetworkManager front-end residing in panels'
                         'firewalld: Firewall daemon with D-Bus interface')
+}
+
+package_manjarowish-connman() {
+	pkgdesc="manjarowish connman support (Meta-PKG)"
+		depends=("connman"
+                        "ofono"
+                        "pacrunner"
+                        "wpa_supplicant"
+                        "rp-pppoe"
+                        "openresolv"
+                        "openssh"
+                        "openconnect"
+                        "openvpn"
+                        "pptpclient"
+                        "avahi"
+                        "nss-mdns"
+                        "dnsmasq"
+                        "ntp"
+                        "samba")
+	optdepends=('cmst: A QT gui for connman'
+                        'connman-gtk: a GTK gui for connman'
+                        'qomui: A QT gui for vpn management'
+                        'gufw: a GTK gui for Uncomplicated firewall'
+                        'nx-firewall: kcm module for firewall')
 }
 
 package_manjarowish-modem() {
@@ -160,9 +186,9 @@ package_manjarowish-printer() {
                         "python-pysmbc"
                         "python-reportlab"
                         "splix"
-                        "system-config-printer"
                         "colord-sane")
-	optdepends=('print-manager: A kde tool for managing print jobs and printers'
+	optdepends=('system-config-printer: A gtk cups printer configuration tool and status applet'
+                        'print-manager: A kde tool for managing print jobs and printers'
                         'xsane: gtk2 frontend for scanner'
                         'simple-scan: gtk3 frontend for scanner'
                         'skanlite: Image Scanning Application for KDE')
@@ -184,5 +210,5 @@ package_manjarowish-printer() {
                         'piper: GTK application to configure gaming mice'
                         'fancontrol-gui: Gui for fancontrol'
                         'fingerprint-gui: Application for fingerprint-based authentication, automatically support UPEK fingerprint readers with non-free library'
-                        'fcitx: for fcitx input method support')
+                        'plasma-thunderbolt: plasma integration for managing thunderbolt devices')
 }
