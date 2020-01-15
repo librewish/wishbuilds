@@ -46,16 +46,11 @@ package_manjarowish-lxqt-kwin-dark-settings() {
     pkgdesc='Manjarowish Linux Lxqt-Kwin dark settings'
     depends=(
         'kvantum-qt5'
-        'mojave-gtk-theme-git'
-        'papirus-icon-theme'
         'noto-fonts'
         'performance-tweaks'
         'sddm-kcm'
         'kwin'
         'kde-cli-tools'
-        'kwin-decoration-sierra-breeze-enhanced-git'
-        'kwin-effects-yet-another-magic-lamp'
-        'kwin-scripts-forceblur'
         )
     optdepends=(
         'timeshift-autosnap'
