@@ -1,6 +1,6 @@
 # Maintainer: Solomon Choina <shlomochoina@gmail.com>
 pkgname=wayfire-git
-pkgver=r993.188dfd4
+pkgver=r1339.126cc24
 pkgrel=1
 pkgdesc="3D wayland compositor"
 arch=('x86_64')
