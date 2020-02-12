@@ -46,9 +46,9 @@ package_wayfire-default-settings() {
     pkgdesc='wayfire default settings'
     depends=(
 	'wayfire-desktop-git'
-	'kvantum-theme-matchama'
-	'papirus-maia-icon-theme'
-	'matcha-gtk-theme'
+	'kvantum-theme-layan-git'
+	'tela-icon-theme-git'
+	'layan-gtk-theme-git'
         'xcursor-breeze'
 	'noto-fonts'
 	'sddm-theme-matcha'

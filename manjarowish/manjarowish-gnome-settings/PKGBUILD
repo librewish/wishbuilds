@@ -48,9 +48,9 @@ package_manjarowish-gnome-settings() {
 
         'qt5ct'
         'kvantum-qt5'
-	'kvantum-theme-matchama'
-	'papirus-maia-icon-theme'
-	'matcha-gtk-theme'
+	'kvantum-theme-layan-git'
+	'tela-icon-theme-git'
+	'layan-gtk-theme-git'
         'xcursor-breeze'
 	'noto-fonts'
         'performance-tweaks'
