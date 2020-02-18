@@ -50,6 +50,9 @@ package_manjarowish-lxqt-kwin-dark-settings() {
         'performance-tweaks'
 	'lxqt-kwin-desktop-git'
 	'mw-icons'
+	'layan-kde-git'
+	'kvantum-theme-layan-git'
+	'layan-gtk-theme-git'
         )
     optdepends=(
         'timeshift-autosnap'
