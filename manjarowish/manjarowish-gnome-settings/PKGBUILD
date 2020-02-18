@@ -60,6 +60,7 @@ package_manjarowish-gnome-settings() {
 	'xdg-su'
 	'wish-wallpapers'
 	'mw-wallpapers'
+	'mw-icons'
         )
     optdepends=(
 	'systemd-guest-user'

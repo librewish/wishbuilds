@@ -55,7 +55,6 @@ package_wayfire-default-settings() {
 	'wish-wallpapers'
         )
 
-        )  
     install=wayfire-default-settings.install
     replaces=('manjarowish-dark-settings-settings','manjaro-kde-settings','manjarowish-light-settings-settings')
     provides=('manjaro-desktop-settings')

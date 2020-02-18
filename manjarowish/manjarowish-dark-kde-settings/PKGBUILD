@@ -65,7 +65,8 @@ package_manjarowish-dark-kde-settings() {
         'kwin-scripts-window-colors'
 	'breezemite-yakuake-git'
 	'wish-wallpapers'
-	'mw-wallpapers'	
+	'mw-wallpapers'
+	'mw-icons'	
         )
     optdepends=(
         'timeshift-autosnap'

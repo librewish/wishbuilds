@@ -49,6 +49,7 @@ package_manjarowish-lxqt-kwin-dark-settings() {
         'noto-fonts'
         'performance-tweaks'
 	'lxqt-kwin-desktop-git'
+	'mw-icons'
         )
     optdepends=(
         'timeshift-autosnap'
