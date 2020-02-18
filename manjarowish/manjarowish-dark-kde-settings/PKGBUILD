@@ -63,7 +63,6 @@ package_manjarowish-dark-kde-settings() {
         'kwin-effects-yet-another-magic-lamp'
         'kwin-scripts-forceblur'
         'kwin-scripts-window-colors'
-	'breezemite-yakuake-git'
 	'wish-wallpapers'
 	'mw-wallpapers'
 	'mw-icons'	
