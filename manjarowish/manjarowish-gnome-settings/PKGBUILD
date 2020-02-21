@@ -49,7 +49,7 @@ package_manjarowish-gnome-settings() {
         'qt5ct'
         'kvantum-qt5'
 	'kvantum-theme-layan-git'
-	'tela-icon-theme-git'
+	'tela-circle-icon-theme-git'
 	'layan-gtk-theme-git'
         'xcursor-breeze'
 	'noto-fonts'

@@ -47,12 +47,13 @@ package_wayfire-default-settings() {
     depends=(
 	'wayfire-desktop-git'
 	'kvantum-theme-layan-git'
-	'tela-icon-theme-git'
+	'tela-circle-icon-theme-git'
 	'layan-gtk-theme-git'
         'xcursor-breeze'
 	'noto-fonts'
 	'sddm-theme-matcha'
 	'wish-wallpapers'
+	'mw-icons'
         )
 
     install=wayfire-default-settings.install
