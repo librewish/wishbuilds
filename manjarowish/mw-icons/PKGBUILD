@@ -45,7 +45,6 @@ package_mw-icons() {
     depends=() 
     replaces=('mw-icons')
     provides=('mw-icons')
-    conflicts=('mw-icons')
 
     _install ''
 }
