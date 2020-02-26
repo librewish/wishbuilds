@@ -61,6 +61,7 @@ package_manjarowish-gnome-settings() {
 	'wish-wallpapers'
 	'mw-wallpapers'
 	'mw-icons'
+	'sound-theme-smooth'
         )
     optdepends=(
 	'systemd-guest-user'

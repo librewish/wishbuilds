@@ -54,6 +54,7 @@ package_wayfire-default-settings() {
 	'sddm-theme-matcha'
 	'wish-wallpapers'
 	'mw-icons'
+	'sound-theme-smooth'
         )
 
     install=wayfire-default-settings.install

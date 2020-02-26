@@ -43,9 +43,6 @@ pkgver() {
 package_mw-icons() {
     pkgdesc='mw-icons'
     depends=() 
-    replaces=('mw-icons')
-    provides=('mw-icons')
-
     _install ''
 }
  
