@@ -60,8 +60,6 @@ package_manjarowish-pantheon-settings() {
         'orca'
         'onboard'
         'numlockx'
-        ttf-{droid,opensans,roboto}
-        gnome-settings-daemon-{compat,elementary}
         )
     optdepends=(
         'timeshift-autosnap'
