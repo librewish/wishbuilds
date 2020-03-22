@@ -1,27 +1,27 @@
 # Maintainer: Librewish <librewish@gmail.com>
 
-pkgbase=manjarowish-meta
+pkgbase=garuda-meta
 arch=('i686' 'x86_64')
-pkgname=('manjarowish-alsa'
-	 'manjarowish-pulse'
-         'manjarowish-gstreamer'
-         'manjarowish-vaapi'
-         'manjarowish-network'
-         'manjarowish-connman'
-         'manjarowish-modem'
-         'manjarowish-bluetooth'
-         'manjarowish-printer'
-         'manjarowish-input'
+pkgname=('garuda-alsa'
+	 'garuda-pulse'
+         'garuda-gstreamer'
+         'garuda-vaapi'
+         'garuda-network'
+         'garuda-connman'
+         'garuda-modem'
+         'garuda-bluetooth'
+         'garuda-printer'
+         'garuda-input'
 )
 
-pkgver=20200114
+pkgver=20200323
 pkgrel=1
-url="www.manjarowish.org"
+url="www.garuda.org"
 license=('GPL')
 
 
-package_manjarowish-alsa() {
-	pkgdesc="manjarowish ALSA support (Meta-PKG)"
+package_garuda-alsa() {
+	pkgdesc="garuda ALSA support (Meta-PKG)"
 	if [ "$CARCH" = "i686" ]; then
 		depends=("alsa-utils"
 			"alsa-firmware"
@@ -41,8 +41,8 @@ package_manjarowish-alsa() {
 	optdepends=('alsa-tools')
 }
 
-package_manjarowish-pulse() {
-	pkgdesc="manjarowish Pulseaudio support (Meta-PKG)"
+package_garuda-pulse() {
+	pkgdesc="garuda Pulseaudio support (Meta-PKG)"
 	if [ "$CARCH" = "i686" ]; then
 		depends=("pulseaudio" 
 			"pulseaudio-alsa")
@@ -70,8 +70,8 @@ package_manjarowish-pulse() {
                         'pulseaudio-ctl: Control PulseAudio volume from the shell or mapped to keyboard shortcuts')
 }
 
-package_manjarowish-gstreamer() {
-	pkgdesc="manjarowish gstreamer support (Meta-PKG)"
+package_garuda-gstreamer() {
+	pkgdesc="garuda gstreamer support (Meta-PKG)"
 		depends=("ffmpeg"
                         "gst-libav"
                         "gst-plugins-bad"
@@ -81,8 +81,8 @@ package_manjarowish-gstreamer() {
                         "gst-plugins-espeak")
 }
 
-package_manjarowish-vaapi() {
-	pkgdesc="manjarowish VA-API support (Meta-PKG)"
+package_garuda-vaapi() {
+	pkgdesc="garuda VA-API support (Meta-PKG)"
 		depends=("libva-intel-driver"
                         "libva-mesa-driver"
                         "libva-vdpau-driver"
@@ -92,8 +92,8 @@ package_manjarowish-vaapi() {
                         "lib32-libva-vdpau-driver")
 }
 
-package_manjarowish-network() {
-	pkgdesc="manjarowish network support (Meta-PKG)"
+package_garuda-network() {
+	pkgdesc="garuda network support (Meta-PKG)"
 		depends=("networkmanager"
                         "networkmanager-openconnect"
                         "networkmanager-openvpn"
@@ -117,8 +117,8 @@ package_manjarowish-network() {
                         'firewalld: Firewall daemon with D-Bus interface')
 }
 
-package_manjarowish-connman() {
-	pkgdesc="manjarowish connman support (Meta-PKG)"
+package_garuda-connman() {
+	pkgdesc="garuda connman support (Meta-PKG)"
 		depends=("connman"
                         "ofono"
                         "pacrunner"
@@ -141,8 +141,8 @@ package_manjarowish-connman() {
                         'nx-firewall: kcm module for firewall')
 }
 
-package_manjarowish-modem() {
-	pkgdesc="manjarowish modem support (Meta-PKG)"
+package_garuda-modem() {
+	pkgdesc="garuda modem support (Meta-PKG)"
 		depends=("modemmanager"
                         "mobile-broadband-provider-info"
                         "usb_modeswitch")
@@ -150,8 +150,8 @@ package_manjarowish-modem() {
                         'gpsd: GPS daemon and library to support USB/serial GPS devices')
 }
 
-package_manjarowish-bluetooth() {
-	pkgdesc="manjarowish bluetooth support (Meta-PKG)"
+package_garuda-bluetooth() {
+	pkgdesc="garuda bluetooth support (Meta-PKG)"
 		depends=("bluez"
                         "bluez-libs"
                         "bluez-cups"
@@ -165,8 +165,8 @@ package_manjarowish-bluetooth() {
                         'blueberry: bluetooth configuration tool')
 }
 
-package_manjarowish-printer() {
-	pkgdesc="manjarowish printer support (Meta-PKG)"
+package_garuda-printer() {
+	pkgdesc="garuda printer support (Meta-PKG)"
 		depends=("cups"
                         "cups-pdf"
                         "cups-pk-helper"
@@ -189,8 +189,8 @@ package_manjarowish-printer() {
                         'skanlite: Image Scanning Application for KDE')
 }
 
- package_manjarowish-input() {
-	pkgdesc="manjarowish input support (Meta-PKG)"
+ package_garuda-input() {
+	pkgdesc="garuda input support (Meta-PKG)"
 		depends=("xf86-input-elographics"
                         "xf86-input-evdev"
                         "xf86-input-void"
