@@ -1,0 +1,20 @@
+# Maintainer: Guinux <nuxgui@gmail.com>
+
+pkgname=garuda-release
+pkgver=0.1
+pkgrel=1
+pkgdesc="garuda's release definition"
+arch=("any")
+url="https://garuda.org/"
+license=('GPL2')
+depends=('lsb-release')
+source=('lsb-release')
+install="garuda-release.install"
+sha256sums=('SKIP')
+
+package() {
+    # Copy files
+    mkdir -p ${pkgdir}/etc
+    install -m644 ${srcdir}/lsb-release ${pkgdir}/etc/
+
+}
