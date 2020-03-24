@@ -1,6 +1,7 @@
 NAME="garuda Linux"
 PRETTY_NAME="garuda Linux"
-ID=arch
+ID=garuda
+ID_LIKE=arch
 BUILD_ID=rolling
 ANSI_COLOR="0;36"
 HOME_URL="https://www.archlinux.org/"

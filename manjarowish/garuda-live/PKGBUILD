@@ -10,7 +10,7 @@ pkgname=('garuda-live-base'
 	'garuda-live-systemd'
 	'garuda-live-skel'
 	'garuda-live-portable-efi')
-pkgver=r64.396bd11
+pkgver=r3.19f1cf0
 pkgrel=1
 pkgdesc='garuda Linux live session'
 arch=('any')
@@ -21,7 +21,7 @@ source=("git+$url.git")
 sha256sums=('SKIP')
 
 pkgver() {
-    cd ${srcdir}/${_pkgbase}
+    cd ${srcdir}/garuda-tools-livecd
     printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
 }
 

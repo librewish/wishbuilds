@@ -1,5 +1,5 @@
 pkgname=garuda-wallpapers
-pkgver=r2.7b850fd
+pkgver=r3.eb2d0fd
 pkgrel=1
 pkgdesc="wallpaper collection"
 arch=('any')

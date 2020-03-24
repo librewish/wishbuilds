@@ -7,7 +7,7 @@
 
 pkgbase=grub-theme-garuda-live
 pkgname=('grub-theme-garuda-live-common' 'grub-theme-garuda-live' 'grub-theme-garuda')
-pkgver=r64.396bd11
+pkgver=r3.ea0b84c
 pkgrel=1
 
 pkgdesc='garuda Linux grub theme'
@@ -19,9 +19,10 @@ source=("grub-theme::git+$url.git#commit=$_commit")
 sha256sums=('SKIP')
 
 pkgver() {
-    cd ${srcdir}/${_pkgbase}
+    cd ${srcdir}/grub-theme
     printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
 }
+
 package_grub-theme-garuda-live-common() {
     depends=('grub')
 
