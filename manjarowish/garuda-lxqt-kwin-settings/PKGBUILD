@@ -2,11 +2,11 @@
 
 
 pkgbase=garuda-lxqt-kwin-settings
-_gitname=garuda-lxqt-kwin-settings
+_gitname=garuda-lxqt-kwn-settings
 pkgname=(
     'garuda-lxqt-kwin-settings'
     )
-pkgver=0.1
+pkgver=r2.4a6a45e
 pkgrel=1
 arch=('any')
 _branch='master'

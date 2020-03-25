@@ -4,7 +4,7 @@ _gitname=garuda-icons
 pkgname=(
     'garuda-icons'
     )
-pkgver=r2.85cbd60
+pkgver=r18.f7c5ebd
 pkgrel=1
 arch=('any')
 _branch='master'
