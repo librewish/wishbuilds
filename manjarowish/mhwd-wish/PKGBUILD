@@ -5,7 +5,7 @@
 pkgbase=mhwd
 pkgname=('mhwd-wish' 'mhwd-db-wish')
 pkgver=0.6.3
-pkgrel=20
+pkgrel=21
 pkgdesc="Manjaro Linux Hardware Detection"
 arch=('i686' 'x86_64')
 url="http://git.manjaro.org"
