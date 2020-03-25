@@ -41,7 +41,7 @@ package_grub-theme-garuda() {
 	install=garuda-theme.install
     
     cd grub-theme/garuda-live
-    sed -i -e 's,.*text = "Welcome to garuda".*,#text = "Welcome to garuda",' theme.txt #remove welcome message
+    sed -i -e 's,.*text = "Welcome to Garuda".*,#text = "Welcome to Garuda",' theme.txt #remove welcome message
     find . -type f -exec install -D -m644 {} ${pkgdir}/usr/share/grub/themes/garuda/{} \;
 }
 
