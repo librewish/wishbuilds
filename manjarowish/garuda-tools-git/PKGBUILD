@@ -12,7 +12,7 @@ pkgname=('garuda-tools-base-git'
         'garuda-tools-pkg-git'
         'garuda-tools-iso-git'
         'garuda-tools-yaml-git')
-pkgver=r4.eba2c75
+pkgver=r7.55e36b6
 pkgrel=1
 arch=('x86_64' 'i686')
 pkgdesc='Development tools for garuda Linux'
