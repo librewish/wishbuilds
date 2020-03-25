@@ -1,16 +1,16 @@
 # Maintainer: Librewish <librewish@gmail.com>
 
 
-pkgbase=manjarowish-gnome-settings
-_gitname=manjarowish-gnome-settings
+pkgbase=garuda-lxqt-kwin-settings
+_gitname=garuda-lxqt-kwin-settings
 pkgname=(
-    'manjarowish-gnome-settings'
+    'garuda-lxqt-kwin-settings'
     )
-pkgver=r22.a5e55f7
+pkgver=0.1
 pkgrel=1
 arch=('any')
 _branch='master'
-url="https://github.com/librewish/manjarowish-gnome-settings"
+url="https://gitlab.com/garuda-linux/themes-and-settings/settings/garuda-lxqt-kwn-settings"
 license=('GPL')
 makedepends=('git')
 source=("git+$url.git#branch=${_branch}")
@@ -35,47 +35,35 @@ _install() {
 }
 
 pkgver() {
-	cd "$srcdir/manjarowish-gnome-settings"
+	cd "$srcdir/garuda-lxqt-kwn-settings"
 
 # Git, no tags available
 	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
 
 }
 
-package_manjarowish-gnome-settings() {
-    pkgdesc='manjarowish gnome default settings'
+package_garuda-lxqt-kwin-settings() {
+    pkgdesc='garuda Linux Lxqt-Kwin settings'
     depends=(
-
-        'qt5ct'
         'kvantum-qt5'
-	'kvantum-theme-layan-git'
-	'tela-icon-theme-git'
-	'layan-gtk-theme-git'
-        'xcursor-breeze'
-	'noto-fonts'
-	'wish-wallpapers'
-	'mw-wallpapers'
-	'mw-icons'
-	'sound-theme-smooth'
+        'noto-fonts'
         'performance-tweaks'
-	'perl-file-mimeinfo'
-	'xdg-user-dirs-gtk'
-	'xdg-utils'
-	'ibus'
-	'orca'
+	'lxqt-kwin-desktop-git'
+	'garuda-icons'
+	'garuda-wallpapers'
+	'layan-kde-git'
+	'kvantum-theme-layan-git'
+	'layan-gtk-theme-git'
         )
     optdepends=(
-	'systemd-guest-user'
         'timeshift-autosnap'
         'grub-btrfs'
-
-        )  
-    install=manjarowish-gnome-settings.install
-    replaces=('manjarowish-dark-settings-settings','manjaro-kde-settings','manjarowish-light-settings-settings')
-    provides=('manjaro-desktop-settings')
-    conflicts=(
-    'manjaro-desktop-settings'
-    )
+	'systemd-guest-user'
+        )    
+    install=garuda-lxqt-kwin-settings.install
+    provides=('garuda-desktop-settings')
+    conflicts=('garuda-desktop-settings')
 
     _install ''
 }
+

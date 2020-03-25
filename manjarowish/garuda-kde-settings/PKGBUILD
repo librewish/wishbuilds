@@ -1,16 +1,16 @@
 # Maintainer: Librewish <librewish@gmail.com>
 
 
-pkgbase=manjarowish-dark-kde-settings
-_gitname=manjarowish-dark
+pkgbase=garuda-kde-settings
+_gitname=garuda
 pkgname=(
-    'manjarowish-dark-kde-settings'
+    'garuda-kde-settings'
     )
 pkgver=0.1
 pkgrel=1
 arch=('any')
 _branch='master'
-url="https://github.com/librewish/manjarowish-dark"
+url="https://gitlab.com/garuda-linux/themes-and-settings/settings/garuda-kde-settings"
 license=('GPL')
 makedepends=('git')
 source=("git+$url.git#branch=${_branch}")
@@ -35,15 +35,15 @@ _install() {
 }
 
 pkgver() {
-	cd "$srcdir/manjarowish-dark"
+	cd "$srcdir/garuda-kde-settings"
 
 # Git, no tags available
 	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
 
 }
 
-package_manjarowish-dark-kde-settings() {
-    pkgdesc='Manjarowish Linux kde dark settings'
+package_garuda-kde-settings() {
+    pkgdesc='garuda Linux kde settings'
     depends=(
         'kvantum-qt5'
         'latte-dock'
@@ -64,19 +64,17 @@ package_manjarowish-dark-kde-settings() {
         'kwin-scripts-forceblur'
         'kwin-scripts-window-colors'
 	'wish-wallpapers'
-	'mw-wallpapers'
-	'mw-icons'	
+	'garuda-wallpapers'
+	'garuda-icons'	
         )
     optdepends=(
         'timeshift-autosnap'
         'grub-btrfs'
 	'systemd-guest-user'
         )    
-    install=manjarowish-dark-kde-settings.install
-    conflicts=('manjarowish-light-settings-settings','manjaro-kde-settings')
-    replaces=('manjarowish-light-settings-settings','manjaro-kde-settings')
-    provides=('manjaro-desktop-settings')
-    conflicts=('manjaro-desktop-settings')
+    install=garuda-kde-settings.install
+    provides=('garuda-desktop-settings')
+    conflicts=('garuda-desktop-settings')
 
     _install ''
 }
