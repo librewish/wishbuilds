@@ -231,6 +231,7 @@ package_garuda-fcitx() {
 		'fcitx-table-other'
 		'fcitx-ui-light'
 		'fcitx-unikey' )
+		}
 
 package_garuda-ibus() {
 	pkgdesc="garuda fcitx support (Meta-PKG)"
