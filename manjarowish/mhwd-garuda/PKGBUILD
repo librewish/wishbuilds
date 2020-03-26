@@ -3,10 +3,10 @@
 # maintainer: Roland Singer <roland[at]manjaro[dog]org>
 
 pkgbase=mhwd
-pkgname=('mhwd-wish' 'mhwd-db-wish')
-pkgver=0.6.3
-pkgrel=21
-pkgdesc="Manjaro Linux Hardware Detection"
+pkgname=('mhwd-garuda' 'mhwd-db-garuda')
+pkgver=0.1
+pkgrel=1
+pkgdesc="mhwd"
 arch=('i686' 'x86_64')
 url="http://git.manjaro.org"
 license=('GPL')
@@ -40,8 +40,8 @@ getsource() {
 }
 
 prepare() {
-  getsource "mhwd-wish" "https://github.com/librewish/mhwd-wish.git"
-  getsource "mhwd-db-wish" "https://github.com/librewish/mhwd-db-wish.git"
+  getsource "mhwd-garuda" "https://gitlab.com/garuda-linux/applications/mhwd-garuda.git"
+  getsource "mhwd-db-garuda" "https://gitlab.com/garuda-linux/applications/mhwd-db-garuda.git"
 }
 
 build() {
@@ -55,9 +55,9 @@ build() {
   make all
 }
 
-package_mhwd-wish() {
-  pkgdesc="Manjaro Linux Hardware Detection library and application"
-  depends=('hwinfo' 'mesa' 'mhwd-db-wish' 'v86d' 'pacman')
+package_mhwd-garuda() {
+  pkgdesc="mhwd library and application"
+  depends=('hwinfo' 'mesa' 'mhwd-db-garuda' 'v86d' 'pacman')
   provides=("mhwd")
   conflicts=("mhwd")
   if [ "${CARCH}" = "x86_64" ]; then
@@ -71,8 +71,8 @@ package_mhwd-wish() {
   install -d -m755 ${pkgdir}/var/lib/mhwd/{db,local}/{pci,usb}
 }
 
-package_mhwd-db-wish() {
-  pkgdesc="Manjaro Linux Hardware Detection Database"
+package_mhwd-db-garuda() {
+  pkgdesc="mhwd Database"
   arch=('i686' 'x86_64')
   depends=('mhwd-nvidia' 'mhwd-ati' 'mhwd-amdgpu')
   depends_x86_64=('mhwd-nvidia' 'mhwd-ati' 'mhwd-amdgpu')

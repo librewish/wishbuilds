@@ -12,9 +12,11 @@ pkgname=('garuda-alsa'
          'garuda-bluetooth'
          'garuda-printer'
          'garuda-input'
+         'garuda-fcitx'
+         'garuda-ibus'
 )
 
-pkgver=20200323
+pkgver=20200325
 pkgrel=1
 url="www.garuda.org"
 license=('GPL')
@@ -207,3 +209,45 @@ package_garuda-printer() {
                         'fingerprint-gui: Application for fingerprint-based authentication, automatically support UPEK fingerprint readers with non-free library'
                         'plasma-thunderbolt: plasma integration for managing thunderbolt devices')
 }
+
+package_garuda-fcitx() {
+	pkgdesc="garuda fcitx support (Meta-PKG)"
+		depends=("fcitx-qt5"
+                        "kcm-fcitx")
+	optdepends=('fcitx-anthy'
+		'fcitx-chewing'
+		'fcitx-cloudpinyin'
+		'fcitx-configtool'
+		'fcitx-googlepinyin'
+		'fcitx-hangul'
+		'fcitx-kkc'
+		'fcitx-libpinyin'
+		'fcitx-m17n'
+		'fcitx-mozc'
+		'fcitx-rime'
+		'fcitx-sayura'
+		'fcitx-sunpinyin'
+		'fcitx-table-extra'
+		'fcitx-table-other'
+		'fcitx-ui-light'
+		'fcitx-unikey' )
+
+package_garuda-ibus() {
+	pkgdesc="garuda fcitx support (Meta-PKG)"
+		depends=( "ibus")
+	optdepends=('ibus-anthy'
+			'ibus-chewing'
+			'ibus-hangul'
+			'ibus-kkc'
+			'ibus-libpinyin'
+			'ibus-m17n'
+			'ibus-pinyin'
+			'ibus-rime'
+			'ibus-skk'
+			'ibus-sunpinyin'
+			'ibus-table'
+			'ibus-typing-booster'
+			'ibus-unikey')
+}
+
+
