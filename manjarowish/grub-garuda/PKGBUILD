@@ -25,7 +25,7 @@ _UNIFONT_VER="12.1.02"
 [[ "${CARCH}" == "x86_64" ]] && _EMU_ARCH="x86_64"
 [[ "${CARCH}" == "i686" ]] && _EMU_ARCH="i386"
 
-pkgname='grub-wish'
+pkgname='grub-garuda'
 pkgdesc='GNU GRand Unified Bootloader (2)'
 _pkgver=2.04
 pkgver=${_pkgver/-/}
