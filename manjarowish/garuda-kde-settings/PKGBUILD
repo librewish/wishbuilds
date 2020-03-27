@@ -2,11 +2,11 @@
 
 
 pkgbase=garuda-kde-settings
-_gitname=garuda
+_gitname=garuda-kde-settings
 pkgname=(
     'garuda-kde-settings'
     )
-pkgver=0.1
+pkgver=r4.b446caf
 pkgrel=1
 arch=('any')
 _branch='master'
